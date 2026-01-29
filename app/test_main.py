@@ -25,28 +25,28 @@ def products() -> list:
     ]
 
 
-@freeze_time(datetime.date(2022, 1, 2))
+@freeze_time("2022-01-02")
 def test_no_outdated_products(
     products: list
 ) -> None:
     assert outdated_products(products) == []
 
 
-@freeze_time(datetime.date(2022, 2, 2))
+@freeze_time("2022-02-02")
 def test_one_outdated_product(
         products: list
 ) -> None:
     assert outdated_products(products) == ["duck"]
 
 
-@freeze_time(datetime.date(2022, 2, 6))
+@freeze_time("2022-02-06")
 def test_two_outdated_products(
     products: list
 ) -> None:
     assert outdated_products(products) == ["chicken", "duck"]
 
 
-@freeze_time(datetime.date(2022, 2, 15))
+@freeze_time("2022-02-15")
 def test_full_outdated_products(
     products: list
 ) -> None:
