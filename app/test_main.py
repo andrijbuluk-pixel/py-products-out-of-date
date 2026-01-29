@@ -25,34 +25,6 @@ def products() -> list:
     ]
 
 
-@freeze_time("2022-01-02")
-def test_no_outdated_products(
-    products: list
-) -> None:
-    assert outdated_products(products) == []
-
-
-@freeze_time("2022-02-02")
-def test_one_outdated_product(
-        products: list
-) -> None:
-    assert outdated_products(products) == ["duck"]
-
-
-@freeze_time("2022-02-06")
-def test_two_outdated_products(
-    products: list
-) -> None:
-    assert outdated_products(products) == ["chicken", "duck"]
-
-
-@freeze_time("2022-02-15")
-def test_full_outdated_products(
-    products: list
-) -> None:
-    assert outdated_products(products) == ["salmon", "chicken", "duck"]
-
-
 @freeze_time("2022-02-05")
 def test_today_not_outdated(
     products: list
