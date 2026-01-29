@@ -1,6 +1,5 @@
 import pytest
-import datetime
-
+from datetime import date
 from freezegun import freeze_time
 from app.main import outdated_products
 
@@ -10,17 +9,17 @@ def products() -> list:
     return [
         {
             "name": "salmon",
-            "expiration_date": datetime.date(2022, 2, 10),
+            "expiration_date": date(2022, 2, 10),
             "price": 600
         },
         {
             "name": "chicken",
-            "expiration_date": datetime.date(2022, 2, 5),
+            "expiration_date": date(2022, 2, 5),
             "price": 120
         },
         {
             "name": "duck",
-            "expiration_date": datetime.date(2022, 2, 1),
+            "expiration_date": date(2022, 2, 1),
             "price": 160
         }
     ]
