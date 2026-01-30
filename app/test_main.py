@@ -28,6 +28,6 @@ def products() -> list:
 
 
 @freeze_time("2022-02-05")
-def test_outdated_products(products: list):
+def test_outdated_products(products: list) -> None:
     result = outdated_products(products)
     assert set(result) == {"duck", "milk"}
