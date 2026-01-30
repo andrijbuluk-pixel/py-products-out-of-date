@@ -1,6 +1,6 @@
-from datetime import date
+import datetime
 
 
 def outdated_products(products: list) -> list:
     return [product["name"] for product in products
-            if product["expiration_date"] < date.today()]
+            if product["expiration_date"] < datetime.date.today()]
